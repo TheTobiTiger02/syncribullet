@@ -115,11 +115,10 @@ export default component$(() => {
               </p>
             </p>
             <Field name="client_id">
-              {(field, props) => (
+              {(_field, props) => (
                 <input
                   {...props}
                   type="text"
-                  value={field.value}
                   placeholder="Client Id"
                   class="py-2.5 px-3 h-10 font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
                 />

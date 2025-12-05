@@ -97,22 +97,20 @@ export default component$(() => {
           for more information.
         </p>
         <Field name="username">
-          {(field, props) => (
+          {(_field, props) => (
             <input
               {...props}
               type="text"
-              value={field.value}
               placeholder="Email"
               class="py-2.5 px-3 h-10 font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
             />
           )}
         </Field>
         <Field name="password">
-          {(field, props) => (
+          {(_field, props) => (
             <input
               {...props}
               type="password"
-              value={field.value}
               placeholder="Password"
               class="py-2.5 px-3 h-10 font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
             />

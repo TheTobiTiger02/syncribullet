@@ -99,11 +99,10 @@ export default component$<SyncriBulletSettingsProps>(
                         type="string"
                         key={item}
                       >
-                        {(field, props) => (
+                        {(_field, props) => (
                           <input
                             placeholder="Manifest URL"
                             class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0 px-1.5 w-full h-[30px]"
-                            value={field.value}
                             {...props}
                           />
                         )}
