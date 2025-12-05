@@ -171,7 +171,7 @@ export default component$<ManifestSettingsProps>(
                                 type="checkbox"
                                 placeholder="List"
                                 class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                checked={field.value}
+                                bind:checked={field.value}
                                 {...props}
                               />
                             </div>
@@ -236,7 +236,7 @@ export default component$<ManifestSettingsProps>(
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
+                                    bind:checked={field.value}
                                     {...props}
                                   />
                                   <div class="flex flex-row gap-2">
@@ -260,7 +260,7 @@ export default component$<ManifestSettingsProps>(
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
+                                    bind:checked={field.value}
                                     {...props}
                                   />
                                   <div class="flex flex-row gap-2">
@@ -286,7 +286,7 @@ export default component$<ManifestSettingsProps>(
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
+                                    bind:checked={field.value}
                                     {...props}
                                   />
                                   <div class="flex flex-row gap-2">
@@ -310,7 +310,7 @@ export default component$<ManifestSettingsProps>(
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
+                                    bind:checked={field.value}
                                     {...props}
                                   />
                                   <div class="flex flex-row gap-2">
@@ -337,7 +337,7 @@ export default component$<ManifestSettingsProps>(
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
+                                    bind:checked={field.value}
                                     {...props}
                                   />
                                   <div class="flex flex-row gap-2">
@@ -364,7 +364,7 @@ export default component$<ManifestSettingsProps>(
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
+                                    bind:checked={field.value}
                                     {...props}
                                   />
                                   <div class="flex flex-row gap-2">
@@ -392,7 +392,7 @@ export default component$<ManifestSettingsProps>(
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
+                                    bind:checked={field.value}
                                     {...props}
                                   />
                                   <div class="flex flex-row gap-2">
@@ -417,7 +417,7 @@ export default component$<ManifestSettingsProps>(
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
+                                    bind:checked={field.value}
                                     {...props}
                                   />
                                   <div class="flex flex-row gap-2 text-start">
