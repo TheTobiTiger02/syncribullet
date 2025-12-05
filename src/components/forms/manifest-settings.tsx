@@ -137,36 +137,32 @@ export default component$<ManifestSettingsProps>(
                     {fieldArray.items.map((item, index) => (
                       <div key={item}>
                         <Field name={`catalogs.${index}.value`} type="boolean">
-                          {(field, props) => {
-                            const { checked: _, ...inputProps } = props as any;
-                            return (
-                              <div class="flex flex-row gap-2">
-                                <div>
-                                  <input
-                                    type="checkbox"
-                                    placeholder="List"
-                                    class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
-                                    {...inputProps}
-                                  />
-                                </div>
-                                <div class="text-start">
-                                  <p class="text-sm pt-0.5">
-                                    {
-                                      currentReceiver.manifestCatalogItems[index]
-                                        .name
-                                    }
-                                  </p>
-                                  <p class="text-xs">
-                                    {
-                                      currentReceiver.manifestCatalogItems[index]
-                                        .type
-                                    }
-                                  </p>
-                                </div>
+                          {(_field, props) => (
+                            <div class="flex flex-row gap-2">
+                              <div>
+                                <input
+                                  type="checkbox"
+                                  placeholder="List"
+                                  class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
+                                  {...props}
+                                />
                               </div>
-                            );
-                          }}
+                              <div class="text-start">
+                                <p class="text-sm pt-0.5">
+                                  {
+                                    currentReceiver.manifestCatalogItems[index]
+                                      .name
+                                  }
+                                </p>
+                                <p class="text-xs">
+                                  {
+                                    currentReceiver.manifestCatalogItems[index]
+                                      .type
+                                  }
+                                </p>
+                              </div>
+                            </div>
+                          )}
                         </Field>
                       </div>
                     ))}
@@ -184,25 +180,21 @@ export default component$<ManifestSettingsProps>(
                     {fieldArray.items.map((item, index) => (
                       <div key={item}>
                         <Field name={`liveSync.${index}.value`} type="boolean">
-                          {(field, props) => {
-                            const { checked: _, ...inputProps } = props as any;
-                            return (
-                              <div class="flex flex-row gap-2">
-                                <div>
-                                  <input
-                                    type="checkbox"
-                                    placeholder="List"
-                                    class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    checked={field.value}
-                                    {...inputProps}
-                                  />
-                                </div>
-                                <div class="text-start">
-                                  <p>{currentReceiver.liveSyncTypes[index]}</p>
-                                </div>
+                          {(_field, props) => (
+                            <div class="flex flex-row gap-2">
+                              <div>
+                                <input
+                                  type="checkbox"
+                                  placeholder="List"
+                                  class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
+                                  {...props}
+                                />
                               </div>
-                            );
-                          }}
+                              <div class="text-start">
+                                <p>{currentReceiver.liveSyncTypes[index]}</p>
+                              </div>
+                            </div>
+                          )}
                         </Field>
                       </div>
                     ))}
