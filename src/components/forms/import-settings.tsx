@@ -164,33 +164,36 @@ export default component$<ManifestSettingsProps>(
                   <div key={item}>
                     <div class="flex flex-row w-full gap-2 justify-between items-start">
                       <Field name={`catalogs.${index}.value`} type="boolean">
-                        {(field, props) => (
-                          <div class="flex flex-row gap-2">
-                            <div>
-                              <input
-                                type="checkbox"
-                                placeholder="List"
-                                class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                bind:checked={field.value}
-                                {...props}
-                              />
+                        {(field, props) => {
+                          const { checked: _, ...inputProps } = props as any;
+                          return (
+                            <div class="flex flex-row gap-2">
+                              <div>
+                                <input
+                                  type="checkbox"
+                                  placeholder="List"
+                                  class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
+                                  checked={field.value}
+                                  {...inputProps}
+                                />
+                              </div>
+                              <div class="text-start">
+                                <p class="text-sm pt-0.5">
+                                  {
+                                    currentReceiver.manifestCatalogItems[index]
+                                      .name
+                                  }
+                                </p>
+                                <p class="text-xs">
+                                  {
+                                    currentReceiver.manifestCatalogItems[index]
+                                      .type
+                                  }
+                                </p>
+                              </div>
                             </div>
-                            <div class="text-start">
-                              <p class="text-sm pt-0.5">
-                                {
-                                  currentReceiver.manifestCatalogItems[index]
-                                    .name
-                                }
-                              </p>
-                              <p class="text-xs">
-                                {
-                                  currentReceiver.manifestCatalogItems[index]
-                                    .type
-                                }
-                              </p>
-                            </div>
-                          </div>
-                        )}
+                          );
+                        }}
                       </Field>
                       <button
                         type="button"
@@ -230,14 +233,15 @@ export default component$<ManifestSettingsProps>(
                               if (field.value === null) {
                                 return <></>;
                               }
+                              const { checked: _, ...inputProps } = props as any;
                               return (
                                 <div class="flex flex-row gap-2 items-center">
                                   <input
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    bind:checked={field.value}
-                                    {...props}
+                                    checked={field.value}
+                                    {...inputProps}
                                   />
                                   <div class="flex flex-row gap-2">
                                     Movies: Was marked as "FlaggedWatched"
@@ -254,14 +258,15 @@ export default component$<ManifestSettingsProps>(
                               if (field.value === null) {
                                 return <></>;
                               }
+                              const { checked: _, ...inputProps } = props as any;
                               return (
                                 <div class="flex flex-row gap-2 items-center">
                                   <input
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    bind:checked={field.value}
-                                    {...props}
+                                    checked={field.value}
+                                    {...inputProps}
                                   />
                                   <div class="flex flex-row gap-2">
                                     Movies: Was marked as "FlaggedUnwatched"
@@ -280,14 +285,15 @@ export default component$<ManifestSettingsProps>(
                               if (field.value === null) {
                                 return <></>;
                               }
+                              const { checked: _, ...inputProps } = props as any;
                               return (
                                 <div class="flex flex-row gap-2 items-center">
                                   <input
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    bind:checked={field.value}
-                                    {...props}
+                                    checked={field.value}
+                                    {...inputProps}
                                   />
                                   <div class="flex flex-row gap-2">
                                     Series: Was marked as "FlaggedWatched"
@@ -304,14 +310,15 @@ export default component$<ManifestSettingsProps>(
                               if (field.value === null) {
                                 return <></>;
                               }
+                              const { checked: _, ...inputProps } = props as any;
                               return (
                                 <div class="flex flex-row gap-2 items-center">
                                   <input
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    bind:checked={field.value}
-                                    {...props}
+                                    checked={field.value}
+                                    {...inputProps}
                                   />
                                   <div class="flex flex-row gap-2">
                                     Series: Was marked as "FlaggedUnwatched"
@@ -331,14 +338,15 @@ export default component$<ManifestSettingsProps>(
                               ) {
                                 return <></>;
                               }
+                              const { checked: _, ...inputProps } = props as any;
                               return (
                                 <div class="flex flex-row gap-2 items-center">
                                   <input
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    bind:checked={field.value}
-                                    {...props}
+                                    checked={field.value}
+                                    {...inputProps}
                                   />
                                   <div class="flex flex-row gap-2">
                                     Series: Was marked as "HasWatchCount"
@@ -358,14 +366,15 @@ export default component$<ManifestSettingsProps>(
                               ) {
                                 return <></>;
                               }
+                              const { checked: _, ...inputProps } = props as any;
                               return (
                                 <div class="flex flex-row gap-2 items-center">
                                   <input
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    bind:checked={field.value}
-                                    {...props}
+                                    checked={field.value}
+                                    {...inputProps}
                                   />
                                   <div class="flex flex-row gap-2">
                                     Series: Prefer "FlaggedWatched" over
@@ -386,14 +395,15 @@ export default component$<ManifestSettingsProps>(
                               ) {
                                 return <></>;
                               }
+                              const { checked: _, ...inputProps } = props as any;
                               return (
                                 <div class="flex flex-row gap-2 items-center">
                                   <input
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    bind:checked={field.value}
-                                    {...props}
+                                    checked={field.value}
+                                    {...inputProps}
                                   />
                                   <div class="flex flex-row gap-2">
                                     Series: Determine which episodes were marked
@@ -411,14 +421,15 @@ export default component$<ManifestSettingsProps>(
                               if (field.value === null) {
                                 return <></>;
                               }
+                              const { checked: _, ...inputProps } = props as any;
                               return (
                                 <div class="flex flex-row gap-2 text-start items-center">
                                   <input
                                     type="checkbox"
                                     placeholder="List"
                                     class="font-sans text-lg font-normal rounded-lg border transition-all focus:border-2 bg-background/20 text-on-surface outline-solid outline-0"
-                                    bind:checked={field.value}
-                                    {...props}
+                                    checked={field.value}
+                                    {...inputProps}
                                   />
                                   <div class="flex flex-row gap-2 text-start">
                                     Series: Mark all episodes before the current
