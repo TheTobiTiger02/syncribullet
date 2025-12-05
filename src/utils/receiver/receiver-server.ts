@@ -179,15 +179,22 @@ export abstract class ReceiverServer<
     potentialType: ManifestReceiverTypes,
   ): Promise<void> {
     const syncTypes = this.getLiveSyncTypes(this.userSettings.liveSync);
+    console.log('[SYNC] syncTypes:', syncTypes);
+    console.log('[SYNC] potentialType:', potentialType);
+    console.log('[SYNC] userSettings.liveSync:', this.userSettings.liveSync);
+    
     if (
       testMaybeAnime(ids.ids) &&
       !syncTypes.includes(ManifestReceiverTypes.ANIME)
     ) {
+      console.log('[SYNC] Skipping - anime not in syncTypes');
       return;
     }
     if (!syncTypes.includes(potentialType)) {
+      console.log('[SYNC] Skipping - potentialType not in syncTypes');
       return;
     }
+    console.log('[SYNC] Proceeding with sync...');
     return await this._syncMetaObject(ids, type, potentialType);
   }
 }

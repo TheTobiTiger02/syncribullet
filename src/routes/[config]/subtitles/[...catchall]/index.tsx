@@ -141,8 +141,14 @@ export const onGet: RequestHandler = async ({
   }
 
   try {
+    console.log('[SYNC DEBUG] Processing sync for', receiversAsList.length, 'receivers');
+    console.log('[SYNC DEBUG] IDs:', JSON.stringify(ids));
+    console.log('[SYNC DEBUG] potentialReceiverType:', potentialReceiverType);
+    
     for (const receiverEntry of receiversAsList) {
       try {
+        console.log('[SYNC DEBUG] Syncing with receiver:', receiverEntry.receiver.receiverInfo?.id);
+        console.log('[SYNC DEBUG] Receiver liveSync setting:', receiverEntry.receiver.userSettings?.liveSync);
         await receiverEntry.receiver.syncMetaObject(
           receiverEntry.ids,
           receiverEntry.receiver.receiverTypeReverseMapping[
@@ -150,8 +156,9 @@ export const onGet: RequestHandler = async ({
           ],
           potentialReceiverType,
         );
+        console.log('[SYNC DEBUG] Sync completed for', receiverEntry.receiver.receiverInfo?.id);
       } catch (e) {
-        console.error(e);
+        console.error('[SYNC ERROR] Failed for receiver:', receiverEntry.receiver.receiverInfo?.id, e);
       }
     }
     if (redirectUrl) {
@@ -161,7 +168,7 @@ export const onGet: RequestHandler = async ({
       subtitles: [],
     });
   } catch (e) {
-    console.error(e);
+    console.error('[SYNC ERROR] General error:', e);
     if (redirectUrl) {
       throw redirect(302, redirectUrl);
     }
